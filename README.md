@@ -29,5 +29,5 @@ This is a simple e-commerce website that allows users to browse products. It use
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the ISC License.
 
