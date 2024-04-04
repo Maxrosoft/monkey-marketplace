@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body>
+    
+    <header class="main-header">
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/admin/products">Products</a>
+          <a class="nav-item nav-link" href="/admin/add-product">Add Product</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link ml-2" href="/admin/logout">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <ul class="list-group">
+        <% for (const product of prods) { %>
+          <li class="list-group-item">
+            <a href="edit-product/?id=<%= product.id %>"><%= product.title %></a> | 
+            $<%= product.price %>
+            <form action="delete-product/?id=<%= product.id %>" method="POST" class="float-right">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
+
+

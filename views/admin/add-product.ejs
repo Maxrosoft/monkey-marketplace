@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <header class="main-header">
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/admin/products">Products</a>
+          <a class="nav-item nav-link" href="/admin/add-product">Add Product</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link ml-2" href="/admin/logout">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <form action="/admin/add-product" method="POST" class="form-horizontal">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" class="form-control" />
+          <label for="price">Price</label>
+          <input type="number" name="price" id="price" class="form-control" />
+          <label for="description">Description</label>
+          <textarea name="description" id="description" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </main>
+  </body>
+</html>
+
